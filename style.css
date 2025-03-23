@@ -5,16 +5,15 @@ html{
     font-size: 1.5vw;
 }
 .grid-container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 10px;
 }
 
-head {
-    grid-column: span 6;
+header {
     grid-column-start: 3;
-    grid-row: 1;
+    grid-row-start: 1;
     justify-content: center;
     align-items: center;
     background-color: white;
