@@ -1,32 +1,50 @@
-html{
-    /* Set GENERAL attributes for the page: font size, color, etc */
+html {
     background-color: darkgreen;
     color: white;
     font-size: 1.5vw;
+    height: 100%;
 }
-.grid-container {
+
+body {
+    margin: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100%;
+}
+
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0; /* Adjust margin to control space between headings */
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 800px; /* Adjust to your needs */
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.grid-container {
+    display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 10px;
 }
 
 header {
-    grid-column-start: 3;
-    grid-row-start: 1;
+    grid-column: 3 / span 8;
+    grid-row: 1;
     justify-content: center;
     align-items: center;
     background-color: white;
     color: darkgreen;
 }
-h1{
-    grid-column-start: 3;
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 150px;
-    justify-content: center;
-    align-items: center;
-}
+
 .navigation-menu {
     position: fixed;
     top: 0;
@@ -40,6 +58,7 @@ h1{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     z-index: 1000; 
 }
+
 .navigation-menu__link {
     margin: 0 1em;
     padding: 0.5em 1em;
@@ -49,10 +68,10 @@ h1{
 
 .navigation-menu__item:hover {
     background-color: white;
-    color:black;
+    color: black;
     font-weight: bold;
     text-decoration: underline;
-  }
+}
 
 .main {
     grid-column: span 8;
@@ -73,21 +92,12 @@ footer {
     color: darkgreen;
 }
 
-/* XL Screens */
-@media (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(12, 1fr);
-    }
-}
-
-/* Laptops and Desktops */
 @media (max-width: 1199px) {
     .grid-container {
         grid-template-columns: repeat(10, 1fr);
     }
 }
 
-/* Tablets */
 @media (max-width: 991px) {
     .grid-container {
         grid-template-columns: repeat(8, 1fr);
@@ -102,7 +112,6 @@ footer {
     }
 }
 
-/* Mobile Phone */
 @media (max-width: 767px) {
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
@@ -123,7 +132,6 @@ footer {
     }
 }
 
-/* Mobile Screens  */
 @media (max-width: 575px) {
     .grid-container {
         display: flex;
@@ -146,4 +154,39 @@ footer {
     footer {
         grid-column: span 4;
     }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
 }

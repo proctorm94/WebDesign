@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Top5 European Football Leagues</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="scripts/main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> 
+            <img src="images/ball.png" alt="Logo" width="30" height="30">
+            Top5 European Football Leagues 
+            <img src="images/ball.png" alt="Logo" width="30" height="30">
+        </h1>
+        <h2>League Updates by Country:</h2>
+        <nav class="navigation-menu">
+            <a class="navigation-menu__link" href="https://www.premierleague.com/" target="_blank"> England </a>
+            <a class="navigation-menu__link" href="https://www.laliga.com/en-GB" target="_blank"> Spain </a>
+            <a class="navigation-menu__link" href="https://www.legaseriea.it/en" target="_blank"> Italy </a>
+            <a class="navigation-menu__link" href="https://www.bundesliga.com/en/bundesliga" target="_blank"> Germany </a>
+            <a class="navigation-menu__link" href="https://ligue1.com/" target="_blank"> France </a>
+        </nav>
+        
+        <main>
+            <template id="league-template">
+                <div class="country">
+                    <h3 class="league-name"></h3>
+                    <img class="league-flag" width="50" height="30" alt="Country Flag">
+                        <ul class="league-teams">
+                            <li class="team"></li>
+                            <li class="team"></li>
+                            <li class="team"></li>
+                        </ul>
+                </div>
+            </template>
+
+            <div id="league-container"></div>
+
+        </main>
+
+        <!-- Modal structure -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Match Info</h2>
+                <p>Check out soccer matches from around the world 
+                    <a href="https://www.espn.com/soccer/schedule" target="_blank">HERE!</a></p>
+            </div>
+        </div>
+
+        <button id="openModalBtn">Match Info</button>
+
+        <footer> Contact: proctorm@cua.edu | Source: espn.com, Google Images</footer>
+
+        
+    </body>
+</html>
